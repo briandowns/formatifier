@@ -6,7 +6,7 @@ This is a port of [Jim Sidler's](https://github.com/jvsidler) [formatifier](http
 
 ## Warning
 
-This application is _not yet_ functional.  Work in progress.
+This application is a Work In Progress.  All exported functions __except__ ToPhone() are currently working.
 
 ## Installation
 
