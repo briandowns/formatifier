@@ -2,6 +2,8 @@
 
 This is a port of [Jim Sidler's](https://github.com/jvsidler) [formatifier](https://github.com/jvsidler/formatifier) to Go (golang).
 
+formatifier is a library to quickly format strings in common formats.
+
 ## Warning
 
 This application is _not yet_ functional.  Work in progress.

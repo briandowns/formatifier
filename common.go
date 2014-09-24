@@ -48,7 +48,7 @@ func (f *Formatifier) removeNonWordChars() {
 }
 
 // Leet speak map of string slices
-var leet = map[string]string{
+var leet = map[string][]string{
 	"leet":     []string{"1337"},
 	"the":      []string{"teh"},
 	"cool":     []string{"kewl"},

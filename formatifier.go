@@ -173,7 +173,11 @@ func (f *Formatifier) ToMorseCode() (string, error) {
 
 // Format the provided string in Pirate Speak.
 func (f *Formatifier) ToPirateSpeak() (string, error) {
-	//
+	if len(f.theString) < 1 {
+		return "", errors.New("ERROR: String not long enough to convert.")
+	}
+
+	return "", nil
 }
 
 // Format the provided string in IRSA.
@@ -196,7 +200,32 @@ func (f *Formatifier) ToIRSA() (string, error) {
 	return buffer.String(), nil
 }
 
-// Format the provided string in Leet.
-func (f *Formatifier) LeetReplace() (string, error) {
-	return "", nil
+// Format the provided string in Leet Speak.
+func (f *Formatifier) ToLeet() (string, error) {
+	if len(f.theString) < 1 {
+		return "", errors.New("ERROR: String not long enough to conver.")
+	}
+
+	f.makeLower()
+
+	words := strings.Fields(f.theString)
+	var buffer bytes.Buffer
+
+	for _, word := range words {
+		key := string(word)
+		if _, ok := leet[word]; ok {
+			buffer.WriteString(leet[key:])
+		} else {
+			for _, i := range word {
+				letter := string(i)
+				if _, ok := leet[letter]; ok {
+					buffer.WriteString(leet[letter:])
+				} else if i == " " {
+					buffer.WriteString(" ")
+				}
+			}
+			buffer.WriteString(" ")
+		}
+	}
+	return buffer.String(), nil
 }
