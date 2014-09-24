@@ -201,6 +201,7 @@ func (f *Formatifier) ToIRSA() (string, error) {
 }
 
 // Format the provided string in Leet Speak.
+// TODO(bdowns328) Make select post match random.
 func (f *Formatifier) ToLeet() (string, error) {
 	if len(f.theString) < 1 {
 		return "", errors.New("ERROR: String not long enough to conver.")
@@ -227,24 +228,3 @@ func (f *Formatifier) ToLeet() (string, error) {
 	}
 	return buffer.String(), nil
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
