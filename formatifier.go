@@ -20,7 +20,7 @@
 // URL: http://play.golang.org/p/W_hL358mUa
 // SSN: http://play.golang.org/p/iMmK9SL_jS
 // Lock: http://play.golang.org/p/_5wf5YyEUw
-// ISBN:
+// ISBN: http://play.golang.org/p/k27ZRvCeo7
 // Morse: http://play.golang.org/p/M_xtujXwwC
 // Pirate:
 // Leet:
