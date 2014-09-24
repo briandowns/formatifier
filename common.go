@@ -21,6 +21,7 @@ import (
 
 const (
 	lengthError = "ERROR: String not long enough to convert."
+	pirateLink = "http://www.isithackday.com/arrpi.php?text=%s"
 )
 
 type Formatifier struct {
@@ -49,6 +50,11 @@ func (f *Formatifier) removeNonWordChars() {
 		rp := regexp.MustCompile(`\W|\s|_`)
 		f.theString = rp.ReplaceAllString(f.theString, "")
 	}
+}
+
+func (f *Formatifier) urlEncodeSpaces() {
+	rp := regexp.MustCompile(`\s`)
+	f.theString = rp.ReplaceAllString(f.theString, "%20")
 }
 
 // Leet speak map of string slices

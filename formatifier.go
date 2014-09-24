@@ -33,6 +33,8 @@ import (
 	"errors"
 	"fmt"
 	"strings"
+	"net/http"
+	"io/ioutil"
 )
 
 // Format the provided string as a Phone Number.  Sticking to the ISO
@@ -177,6 +179,20 @@ func (f *Formatifier) ToPirateSpeak() (string, error) {
 		return "", errors.New(lengthError)
 	}
 
+	f.urlEncodeSpaces()
+
+	response, err := http.Get(fmt.Sprintf(pirateLink, f.theString))
+	if err != nil {
+		return "", errors.New("ERROR: Unable to convert.")
+	} else {
+		defer response.Body.Close()
+
+		contents, err := ioutil.ReadAll(response.Body)
+		if err != nil {
+			return "", err
+		}
+		return string(contents), nil
+	}
 	return "", nil
 }
 
