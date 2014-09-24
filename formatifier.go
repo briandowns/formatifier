@@ -132,7 +132,7 @@ func (f *Formatifier) ToISBN(delimiter string) (string, error) {
 	f.removeNonDigits()
 
 	if len(f.theString) != 13 {
-		return "", errors.New("ERROR: Incorrect ISBN format.")
+		return "", errors.New("ERROR: string needs to be 13 characters.")
 	}
 
 	var buffer bytes.Buffer
