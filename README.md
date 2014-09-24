@@ -78,6 +78,9 @@ if err != nil {
 
 fmt.Println(result)
 ```
+```bash
+786-54-0986
+```
 
 ### Lock Combo
 
@@ -91,11 +94,14 @@ if err != nil {
 
 fmt.Println(result)
 ```
+```bash
+65-10-96
+```
 
 ### ISBN
 
 ```Go
-str := formatifier.New("651096")
+str := formatifier.New("6517106483096")
 
 result, err := str.ToISBN("-")
 if err != nil {
@@ -104,11 +110,13 @@ if err != nil {
 
 fmt.Println(result)
 ```
-
+```bash
+651-7-10-648309-6
+```
 ### Morse Code
 
 ```Go
-str := formatifier.New("hey this is going to be in morse code")
+str := formatifier.New("hello my friend")
 
 result, err := str.ToMorseCode()
 if err != nil {
@@ -116,6 +124,9 @@ if err != nil {
 }
 
 fmt.Println(result)
+```
+```bash
+. . . ... _ . .. _ . ._ _ _ _ __ . _ _ . . _ .. _ .. .._ ._ . .
 ```
 
 ### Pirate Speak
@@ -130,6 +141,9 @@ if err != nil {
 
 fmt.Println(result)
 ```
+```bash
+ahoy my mate
+```
 
 ### IRSA
 
@@ -143,6 +157,9 @@ if err != nil {
 
 fmt.Println(result)
 ```
+```bash
+hotel echo lima lima oscar  |  mike yankee  |  foxtrot romeo india echo november delta 
+```
 
 ### Leet Speak
 
@@ -155,5 +172,8 @@ if err != nil {
 }
 
 fmt.Println(result)
+```
+```bash
+7#47 15 kewl d00d
 ```
 
