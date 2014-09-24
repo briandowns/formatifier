@@ -23,7 +23,7 @@
 // ISBN: http://play.golang.org/p/k27ZRvCeo7
 // Morse: http://play.golang.org/p/M_xtujXwwC
 // Pirate:
-// Leet:
+// Leet: http://play.golang.org/p/I6g21KKdjk
 // IRSA: http://play.golang.org/p/_nRQwWywKW
 //
 
@@ -214,14 +214,12 @@ func (f *Formatifier) ToLeet() (string, error) {
 	for _, word := range words {
 		key := string(word)
 		if _, ok := leet[word]; ok {
-			buffer.WriteString(leet[key:])
+			buffer.WriteString(leet[key][0] + " ")
 		} else {
 			for _, i := range word {
 				letter := string(i)
 				if _, ok := leet[letter]; ok {
-					buffer.WriteString(leet[letter:])
-				} else if i == " " {
-					buffer.WriteString(" ")
+					buffer.WriteString(leet[letter][0])
 				}
 			}
 			buffer.WriteString(" ")
@@ -229,3 +227,24 @@ func (f *Formatifier) ToLeet() (string, error) {
 	}
 	return buffer.String(), nil
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
