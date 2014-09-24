@@ -12,7 +12,7 @@ godoc -http=:6060
 
 ## Warning
 
-This application is a Work In Progress.  All exported functions __except__ ToPhone() are currently working.
+This library is a Work In Progress.
 
 ## Installation
 

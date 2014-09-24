@@ -22,8 +22,10 @@ import (
 	"errors"
 	"fmt"
 	"io/ioutil"
+	"math/rand"
 	"net/http"
 	"strings"
+	"time"
 )
 
 // Format the provided string as a Phone Number.  Only supports
@@ -231,6 +233,7 @@ func (f *Formatifier) ToLeet() (string, error) {
 	}
 
 	f.makeLower()
+	rand.Seed(time.Now().UTC().UnixNano())
 
 	words := strings.Fields(f.theString)
 	var buffer bytes.Buffer
