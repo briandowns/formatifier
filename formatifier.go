@@ -22,7 +22,7 @@
 // Lock: http://play.golang.org/p/_5wf5YyEUw
 // ISBN: http://play.golang.org/p/k27ZRvCeo7
 // Morse: http://play.golang.org/p/M_xtujXwwC
-// Pirate:
+// Pirate: http://play.golang.org/p/QVF0PTx3cm
 // Leet: http://play.golang.org/p/I6g21KKdjk
 // IRSA: http://play.golang.org/p/_nRQwWywKW
 //
