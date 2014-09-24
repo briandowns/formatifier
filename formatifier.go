@@ -143,7 +143,7 @@ func (f *Formatifier) ToISBN(delimiter string) (string, error) {
 
 		buffer.WriteString(string(i))
 
-		if count == 2 || count == 4 {
+		if count == 3 || count == 4 || count == 6 || count == 12 {
 			buffer.WriteString(delimiter)
 		}
 	}
