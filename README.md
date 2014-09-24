@@ -36,10 +36,12 @@ func main() {
 }
 ```
 
-### Telephone
+### Telephone 1
 
 ```Go
-// Not implemented yet
+str := New("2155551212")
+	
+result, err := str.ToPhone("-")
 if err != nil {
     fmt.Println(err)
 }
@@ -47,7 +49,23 @@ if err != nil {
 fmt.Println(result)
 ```
 ```bash
+(215) 555-1212
+```
 
+### Telephone 2
+
+```Go
+str := New("12155551212")
+	
+result, err := str.ToPhone("-")
+if err != nil {
+    fmt.Println(err)
+}
+
+fmt.Println(result)
+```
+```bash
+1 (215) 555-1212
 ```
 
 ### URL

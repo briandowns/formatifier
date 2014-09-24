@@ -26,25 +26,43 @@ import (
 	"strings"
 )
 
-// Format the provided string as a Phone Number.  Sticking to the ISO
-// standard for country abbreviations.
-/*
- China 1234 5678
- France  01–23–45–67–89
- Poland  (12) 345.67.89
- Singapore 123 4567
- Thailand  (01) 234–5678 or (012) 34–5678
- United Kingdom  0123 456 7890 or 01234 567890
- United States 1 (123) 456 7890
-*/
-func (f *Formatifier) ToPhone(geo string, international string, delimiter string) (string, error) {
-	if len(geo) != 2 {
-		return nil, errors.New("ERROR: Incorrect GEO code format")
-	}
-
+// Format the provided string as a Phone Number.  Only supports
+// US numbers currently.
+func (f *Formatifier) ToPhone(delimiter string) (string, error) {
 	f.removeNonDigits()
 
-	return "", nil
+	var buffer bytes.Buffer
+	count := 0
+
+	if len(f.theString) == 10 {
+		buffer.WriteString("(")
+		for _, i := range f.theString {
+			count++
+
+			buffer.WriteString(string(i))
+
+			if count == 3 {
+				buffer.WriteString(") ")
+			} else if count == 6 {
+				buffer.WriteString(fmt.Sprintf("%s", delimiter))
+			}
+		}
+	} else if len(f.theString) == 11 {
+		for _, i := range f.theString {
+			count++
+
+			buffer.WriteString(string(i))
+
+			if count == 1 {
+				buffer.WriteString(" (")
+			} else if count == 4 {
+				buffer.WriteString(") ")
+			} else if count == 7 {
+				buffer.WriteString(fmt.Sprintf("%s", delimiter))
+			}
+		}
+	}
+	return buffer.String(), nil
 }
 
 // Format the provided string as a URL.  HTTP and HTTPS
