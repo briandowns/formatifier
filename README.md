@@ -39,11 +39,15 @@ func main() {
 ### Telephone
 
 ```Go
+// Not implemented yet
 if err != nil {
     fmt.Println(err)
 }
 
 fmt.Println(result)
+```
+```bash
+
 ```
 
 ### URL
@@ -57,6 +61,9 @@ if err != nil {
 }
 
 fmt.Println(result)
+```
+```bash
+https://www.github.com/bdowns328
 ```
 
 ### SSN
