@@ -21,7 +21,7 @@ import (
 
 const (
 	lengthError = "ERROR: String not long enough to convert."
-	pirateLink = "http://www.isithackday.com/arrpi.php?text=%s"
+	pirateLink  = "http://www.isithackday.com/arrpi.php?text=%s"
 )
 
 type Formatifier struct {

@@ -32,9 +32,9 @@ package formatifier
 import (
 	"errors"
 	"fmt"
-	"strings"
-	"net/http"
 	"io/ioutil"
+	"net/http"
+	"strings"
 )
 
 // Format the provided string as a Phone Number.  Sticking to the ISO
