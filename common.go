@@ -19,13 +19,17 @@ import (
 	"strings"
 )
 
+const (
+	lengthError = "ERROR: String not long enough to convert."
+)
+
 type Formatifier struct {
 	theString string
 }
 
 // Create a new instance of the String object.
-func New() *Formatifier {
-	return &Formatifier{}
+func New(s string) *Formatifier {
+	return &Formatifier{theString: s}
 }
 
 // Makes the user entered string lower case.

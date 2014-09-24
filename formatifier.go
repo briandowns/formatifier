@@ -60,7 +60,7 @@ func (f *Formatifier) ToPhone(geo string, international string, delimiter string
 // are the only supported protocols at this time.
 func (f *Formatifier) ToURL(secure bool, subdomain string) (string, error) {
 	if len(f.theString) < 1 {
-		return "", errors.New("ERROR: URL needs to be longer than 0 characters.")
+		return "", errors.New(lengthError)
 	}
 
 	f.makeLower()
@@ -132,7 +132,7 @@ func (f *Formatifier) ToISBN(delimiter string) (string, error) {
 	f.removeNonDigits()
 
 	if len(f.theString) != 13 {
-		return "", errors.New("ERROR: string needs to be 13 characters.")
+		return "", errors.New("ERROR: string must be 13 characters.")
 	}
 
 	var buffer bytes.Buffer
@@ -153,7 +153,7 @@ func (f *Formatifier) ToISBN(delimiter string) (string, error) {
 // Format the provided string in Morse Code.
 func (f *Formatifier) ToMorseCode() (string, error) {
 	if len(f.theString) < 1 {
-		return "", errors.New("ERROR: String not long enough to convert.")
+		return "", errors.New(lengthError)
 	}
 
 	f.makeLower()
@@ -174,7 +174,7 @@ func (f *Formatifier) ToMorseCode() (string, error) {
 // Format the provided string in Pirate Speak.
 func (f *Formatifier) ToPirateSpeak() (string, error) {
 	if len(f.theString) < 1 {
-		return "", errors.New("ERROR: String not long enough to convert.")
+		return "", errors.New(lengthError)
 	}
 
 	return "", nil
@@ -184,7 +184,7 @@ func (f *Formatifier) ToPirateSpeak() (string, error) {
 // International Radio-Telephony Spelling Alphabet
 func (f *Formatifier) ToIRSA() (string, error) {
 	if len(f.theString) < 1 {
-		return "", errors.New("ERROR: Incorrect format for IRSA conversion.")
+		return "", errors.New(lengthError)
 	}
 
 	f.makeLower()
@@ -204,7 +204,7 @@ func (f *Formatifier) ToIRSA() (string, error) {
 // TODO(bdowns328) Make select post match random.
 func (f *Formatifier) ToLeet() (string, error) {
 	if len(f.theString) < 1 {
-		return "", errors.New("ERROR: String not long enough to conver.")
+		return "", errors.New(lengthError)
 	}
 
 	f.makeLower()
