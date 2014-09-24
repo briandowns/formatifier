@@ -15,17 +15,6 @@
 //
 // formatifier is a library to easily format strings in a user defined and predefined manner.
 //
-// Examples:
-// Phone:
-// URL: http://play.golang.org/p/W_hL358mUa
-// SSN: http://play.golang.org/p/iMmK9SL_jS
-// Lock: http://play.golang.org/p/_5wf5YyEUw
-// ISBN: http://play.golang.org/p/k27ZRvCeo7
-// Morse: http://play.golang.org/p/M_xtujXwwC
-// Pirate: http://play.golang.org/p/QVF0PTx3cm
-// IRSA: http://play.golang.org/p/_nRQwWywKW
-// Leet: http://play.golang.org/p/I6g21KKdjk
-//
 
 package formatifier
 
