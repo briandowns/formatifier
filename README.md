@@ -22,7 +22,7 @@ go get github.com/bdowns328/formatifier
 
 ## Examples
 
-### Import the package, create a new formatifier object.
+### Import the package
 
 ```Go
 package main
@@ -30,18 +30,12 @@ package main
 import (
     "github.com/bdowns328/formatifier"
 )
-
-func main() {
-    str := formatifier.New("hello world")
-}
 ```
 
 ### Telephone 1
 
 ```Go
-str := New("2155551212")
-	
-result, err := str.ToPhone("-")
+result, err := str.ToPhone("2155551212", "-")
 if err != nil {
     fmt.Println(err)
 }
@@ -55,9 +49,7 @@ fmt.Println(result)
 ### Telephone 2
 
 ```Go
-str := New("12155551212")
-	
-result, err := str.ToPhone("-")
+result, err := str.ToPhone("12155551212", "-")
 if err != nil {
     fmt.Println(err)
 }
@@ -68,12 +60,10 @@ fmt.Println(result)
 1 (215) 555-1212
 ```
 
-### URL
+### URL 1
 
 ```Go
-str := formatifier.New("github.com/bdowns328")
-
-result, err := str.ToURL(true, "www")
+result, err := str.ToURL("github.com/bdowns328", true, "")
 if err != nil {
     fmt.Println(err)
 }
@@ -81,15 +71,27 @@ if err != nil {
 fmt.Println(result)
 ```
 ```bash
-https://www.github.com/bdowns328
+https://github.com/bdowns328
+```
+
+### URL 2
+
+```Go
+result, err := str.ToURL("github.com/bdowns328", false, "gist")
+if err != nil {
+    fmt.Println(err)
+}
+
+fmt.Println(result)
+```
+```bash
+http://gist.github.com/bdowns328
 ```
 
 ### SSN
 
 ```Go
-str := formatifier.New("786540986")
-
-result, err := str.ToSSN("-")
+result, err := str.ToSSN("786540986", "-")
 if err != nil {
     fmt.Println(err)
 }
@@ -103,9 +105,7 @@ fmt.Println(result)
 ### Lock Combo
 
 ```Go
-str := formatifier.New("651096")
-
-result, err := str.ToLoclCombo("-")
+result, err := str.ToLoclCombo("651096", "-")
 if err != nil {
     fmt.Println(err)
 }
@@ -119,9 +119,7 @@ fmt.Println(result)
 ### ISBN
 
 ```Go
-str := formatifier.New("6517106483096")
-
-result, err := str.ToISBN("-")
+result, err := str.ToISBN("6517106483096", "-")
 if err != nil {
     fmt.Println(err)
 }
@@ -134,9 +132,7 @@ fmt.Println(result)
 ### Morse Code
 
 ```Go
-str := formatifier.New("hello my friend")
-
-result, err := str.ToMorseCode()
+result, err := str.ToMorseCode("hello my friend")
 if err != nil {
     fmt.Println(err)
 }
@@ -150,9 +146,7 @@ fmt.Println(result)
 ### Pirate Speak
 
 ```Go
-str := formatifier.New("hello my friend")
-
-result, err := str.ToPirateSpeak()
+result, err := str.ToPirateSpeak("hello my friend")
 if err != nil {
     fmt.Println(err)
 }
@@ -166,9 +160,7 @@ ahoy my mate
 ### IRSA
 
 ```Go
-str := formatifier.New("hello my friend")
-
-result, err := str.ToIRSA()
+result, err := str.ToIRSA("hello my friend")
 if err != nil {
     fmt.Println(err)
 }
@@ -182,9 +174,7 @@ hotel echo lima lima oscar  |  mike yankee  |  foxtrot romeo india echo november
 ### Leet Speak
 
 ```Go
-str := formatifier.New("that is cool dude")
-
-result, err := str.ToLeet()
+result, err := str.ToLeet("that is cool dude")
 if err != nil {
     fmt.Println(err)
 }
