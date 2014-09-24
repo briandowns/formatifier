@@ -30,7 +30,9 @@ import (
 
 // Format the provided string as a Phone Number.  Only supports
 // US numbers currently.
-func (f *Formatifier) ToPhone(delimiter string) (string, error) {
+func ToPhone(theString string, delimiter string) (string, error) {
+	f := New(theString)
+
 	f.removeNonDigits()
 
 	var buffer bytes.Buffer
@@ -69,7 +71,9 @@ func (f *Formatifier) ToPhone(delimiter string) (string, error) {
 
 // Format the provided string as a URL.  HTTP and HTTPS
 // are the only supported protocols at this time.
-func (f *Formatifier) ToURL(secure bool, subdomain string) (string, error) {
+func ToURL(theString string, secure bool, subdomain string) (string, error) {
+	f := New(theString)
+
 	if len(f.theString) < 1 {
 		return "", errors.New(lengthError)
 	}
@@ -92,7 +96,9 @@ func (f *Formatifier) ToURL(secure bool, subdomain string) (string, error) {
 }
 
 // Format the provided string as a SSN.
-func (f *Formatifier) ToSSN(delimiter string) (string, error) {
+func ToSSN(theString string, delimiter string) (string, error) {
+	f := New(theString)
+
 	f.removeNonDigits()
 
 	if len(f.theString) != 9 {
@@ -115,7 +121,9 @@ func (f *Formatifier) ToSSN(delimiter string) (string, error) {
 }
 
 // Format the provided string as a Lock Combo.
-func (f *Formatifier) ToLockCombo(delimiter string) (string, error) {
+func ToLockCombo(theString string, delimiter string) (string, error) {
+	f := New(theString)
+
 	f.removeNonDigits()
 
 	if len(f.theString) != 9 {
@@ -139,7 +147,9 @@ func (f *Formatifier) ToLockCombo(delimiter string) (string, error) {
 
 // Format the provided string in International Standard Book Number
 // (ISBN) format.
-func (f *Formatifier) ToISBN(delimiter string) (string, error) {
+func ToISBN(theString string, delimiter string) (string, error) {
+	f := New(theString)
+
 	f.removeNonDigits()
 
 	if len(f.theString) != 13 {
@@ -162,7 +172,9 @@ func (f *Formatifier) ToISBN(delimiter string) (string, error) {
 }
 
 // Format the provided string in Morse Code.
-func (f *Formatifier) ToMorseCode() (string, error) {
+func ToMorseCode(theString string) (string, error) {
+	f := New(theString)
+
 	if len(f.theString) < 1 {
 		return "", errors.New(lengthError)
 	}
@@ -183,7 +195,9 @@ func (f *Formatifier) ToMorseCode() (string, error) {
 }
 
 // Format the provided string in Pirate Speak.
-func (f *Formatifier) ToPirateSpeak() (string, error) {
+func ToPirateSpeak(theString string) (string, error) {
+	f := New(theString)
+
 	if len(f.theString) < 1 {
 		return "", errors.New(lengthError)
 	}
@@ -207,7 +221,9 @@ func (f *Formatifier) ToPirateSpeak() (string, error) {
 
 // Format the provided string in IRSA.
 // International Radio-Telephony Spelling Alphabet
-func (f *Formatifier) ToIRSA() (string, error) {
+func ToIRSA(theString string) (string, error) {
+	f := New(theString)
+
 	if len(f.theString) < 1 {
 		return "", errors.New(lengthError)
 	}
@@ -227,7 +243,9 @@ func (f *Formatifier) ToIRSA() (string, error) {
 
 // Format the provided string in Leet Speak.
 // TODO(bdowns328) Make select post match random.
-func (f *Formatifier) ToLeet() (string, error) {
+func ToLeet(theString string) (string, error) {
+	f := New(theString)
+
 	if len(f.theString) < 1 {
 		return "", errors.New(lengthError)
 	}
