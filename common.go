@@ -12,6 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+/*
+ formatifier is a library to easily format strings in a user defined and predefined manner.
+*/
+
 package formatifier
 
 import (
@@ -24,35 +28,36 @@ const (
 	pirateLink  = "http://www.isithackday.com/arrpi.php?text=%s"
 )
 
-type Formatifier struct {
+// Type to hold user input string.
+type formatifier struct {
 	theString string
 }
 
 // Create a new instance of the String object.
-func New(s string) *Formatifier {
-	return &Formatifier{theString: s}
+func New(s string) *formatifier {
+	return &formatifier{theString: s}
 }
 
 // Makes the user entered string lower case.
-func (f *Formatifier) makeLower() {
+func (f *formatifier) makeLower() {
 	f.theString = strings.ToLower(f.theString)
 }
 
 // Remove any non digit characters from the string.
-func (f *Formatifier) removeNonDigits() {
+func (f *formatifier) removeNonDigits() {
 	rp := regexp.MustCompile(`\D`)
 	f.theString = rp.ReplaceAllString(f.theString, "")
 }
 
 // Remove all non word characters.
-func (f *Formatifier) removeNonWordChars() {
+func (f *formatifier) removeNonWordChars() {
 	if len(f.theString) > 0 {
 		rp := regexp.MustCompile(`\W|\s|_`)
 		f.theString = rp.ReplaceAllString(f.theString, "")
 	}
 }
 
-func (f *Formatifier) urlEncodeSpaces() {
+func (f *formatifier) urlEncodeSpaces() {
 	rp := regexp.MustCompile(`\s`)
 	f.theString = rp.ReplaceAllString(f.theString, "%20")
 }

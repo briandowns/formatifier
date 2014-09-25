@@ -12,10 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//
-// formatifier is a library to easily format strings in a user defined and predefined manner.
-//
-
 package formatifier
 
 import (
@@ -102,7 +98,7 @@ func ToSSN(theString string, delimiter string) (string, error) {
 	f.removeNonDigits()
 
 	if len(f.theString) != 9 {
-		return "", errors.New("ERROR: String needs to be 9 digits for Social Security Numbers.")
+		return "", errors.New("ERROR: String needs to be 9 digits for Social Security Numbers")
 	}
 
 	var buffer bytes.Buffer
@@ -127,7 +123,7 @@ func ToLockCombo(theString string, delimiter string) (string, error) {
 	f.removeNonDigits()
 
 	if len(f.theString) != 9 {
-		return "", errors.New("ERROR: String needs to be 6 digits for Lock Combo format.")
+		return "", errors.New("ERROR: String needs to be 6 digits for Lock Combo format")
 	}
 
 	var buffer bytes.Buffer
@@ -153,7 +149,7 @@ func ToISBN(theString string, delimiter string) (string, error) {
 	f.removeNonDigits()
 
 	if len(f.theString) != 13 {
-		return "", errors.New("ERROR: string must be 13 characters.")
+		return "", errors.New("ERROR: string must be 13 characters")
 	}
 
 	var buffer bytes.Buffer
