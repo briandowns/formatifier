@@ -243,7 +243,6 @@ func ToLeet(theString string) (string, error) {
 	}
 
 	f.makeLower()
-	rand.Seed(time.Now().UTC().UnixNano())
 
 	words := strings.Fields(f.theString)
 	var buffer bytes.Buffer

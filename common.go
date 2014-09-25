@@ -12,13 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/*
- formatifier is a library to easily format strings in a user defined and predefined manner.
-*/
-
+// formatifier is a library to easily format strings in a user defined
+// and predefined manner.
 package formatifier
 
 import (
+	"crypto/rand"
 	"regexp"
 	"strings"
 )
@@ -60,6 +59,16 @@ func (f *formatifier) removeNonWordChars() {
 func (f *formatifier) urlEncodeSpaces() {
 	rp := regexp.MustCompile(`\s`)
 	f.theString = rp.ReplaceAllString(f.theString, "%20")
+}
+
+func randomSelect(anySlice []int) int {
+	var tmpIndex int
+	length := len(anySlice)
+	randBytes := make([]byte, length)
+	if _, err := rand.Read(randBytes); err == nil {
+		tmpIndex = int(randBytes[0]) % length
+	}
+	return anySlice[tmpIndex]
 }
 
 // Leet speak map of string slices
