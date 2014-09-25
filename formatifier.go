@@ -24,8 +24,10 @@ import (
 	"time"
 )
 
-// Format the provided string as a Phone Number.  Only supports
-// US numbers currently.
+/*
+ Format the provided string as a Phone Number.  Only supports
+ US numbers currently.
+*/
 func ToPhone(theString string, delimiter string) (string, error) {
 	f := New(theString)
 
@@ -65,8 +67,10 @@ func ToPhone(theString string, delimiter string) (string, error) {
 	return buffer.String(), nil
 }
 
-// Format the provided string as a URL.  HTTP and HTTPS
-// are the only supported protocols at this time.
+/*
+ Format the provided string as a URL.  HTTP and HTTPS
+ are the only supported protocols at this time.
+*/
 func ToURL(theString string, secure bool, subdomain string) (string, error) {
 	f := New(theString)
 
@@ -82,7 +86,7 @@ func ToURL(theString string, secure bool, subdomain string) (string, error) {
 		}
 		return fmt.Sprintf("https://%s", f.theString), nil
 	}
-	
+
 	if len(subdomain) > 0 {
 		return fmt.Sprintf("http://%s.%s", subdomain, f.theString), nil
 	}
