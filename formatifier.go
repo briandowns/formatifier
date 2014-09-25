@@ -24,10 +24,8 @@ import (
 	"time"
 )
 
-/*
- Format the provided string as a Phone Number.  Only supports
- US numbers currently.
-*/
+// ToPhone will format the provided string as a Phone Number.  Only supports
+// US numbers currently.
 func ToPhone(theString string, delimiter string) (string, error) {
 	f := New(theString)
 
@@ -67,10 +65,8 @@ func ToPhone(theString string, delimiter string) (string, error) {
 	return buffer.String(), nil
 }
 
-/*
- Format the provided string as a URL.  HTTP and HTTPS
- are the only supported protocols at this time.
-*/
+// ToURL will format the provided string as a URL.  HTTP and HTTPS
+// are the only supported protocols at this time.
 func ToURL(theString string, secure bool, subdomain string) (string, error) {
 	f := New(theString)
 
@@ -93,7 +89,7 @@ func ToURL(theString string, secure bool, subdomain string) (string, error) {
 	return fmt.Sprintf("http://%s", f.theString), nil
 }
 
-// Format the provided string as a SSN.
+// ToSSN will format the provided string as a SSN.
 func ToSSN(theString string, delimiter string) (string, error) {
 	f := New(theString)
 
@@ -118,7 +114,7 @@ func ToSSN(theString string, delimiter string) (string, error) {
 	return buffer.String(), nil
 }
 
-// Format the provided string as a Lock Combo.
+// ToLockCombo will format the provided string as a Lock Combo.
 func ToLockCombo(theString string, delimiter string) (string, error) {
 	f := New(theString)
 
@@ -143,7 +139,7 @@ func ToLockCombo(theString string, delimiter string) (string, error) {
 	return buffer.String(), nil
 }
 
-// Format the provided string in International Standard Book Number
+// ToISBN will format the provided string in International Standard Book Number
 // (ISBN) format.
 func ToISBN(theString string, delimiter string) (string, error) {
 	f := New(theString)
@@ -169,7 +165,7 @@ func ToISBN(theString string, delimiter string) (string, error) {
 	return buffer.String(), nil
 }
 
-// Format the provided string in Morse Code.
+// ToMorseCode will format the provided string in Morse Code.
 func ToMorseCode(theString string) (string, error) {
 	f := New(theString)
 
@@ -192,7 +188,7 @@ func ToMorseCode(theString string) (string, error) {
 	return buffer.String(), nil
 }
 
-// Format the provided string in Pirate Speak.
+// ToPirateSpeak will format the provided string in Pirate Speak.
 func ToPirateSpeak(theString string) (string, error) {
 	f := New(theString)
 
@@ -215,7 +211,7 @@ func ToPirateSpeak(theString string) (string, error) {
 	return string(contents), nil
 }
 
-// Format the provided string in IRSA.
+// ToIRSA will format the provided string in IRSA.
 // International Radio-Telephony Spelling Alphabet
 func ToIRSA(theString string) (string, error) {
 	f := New(theString)
@@ -237,7 +233,7 @@ func ToIRSA(theString string) (string, error) {
 	return buffer.String(), nil
 }
 
-// Format the provided string in Leet Speak.
+// ToLeet will format the provided string in Leet Speak.
 // TODO(bdowns328) Make select post match random.
 func ToLeet(theString string) (string, error) {
 	f := New(theString)
