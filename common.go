@@ -33,7 +33,7 @@ type formatifier struct {
 	theString string
 }
 
-// Create a new instance of the String object.
+// New will create a new instance of the String object.
 func New(s string) *formatifier {
 	return &formatifier{theString: s}
 }
