@@ -79,16 +79,14 @@ func ToURL(theString string, secure bool, subdomain string) (string, error) {
 	if secure {
 		if len(subdomain) > 0 {
 			return fmt.Sprintf("https://%s.%s", subdomain, f.theString), nil
-		} else {
-			return fmt.Sprintf("https://%s", f.theString), nil
 		}
-	} else {
-		if len(subdomain) > 0 {
-			return fmt.Sprintf("http://%s.%s", subdomain, f.theString), nil
-		} else {
-			return fmt.Sprintf("http://%s", f.theString), nil
-		}
+		return fmt.Sprintf("https://%s", f.theString), nil
 	}
+	
+	if len(subdomain) > 0 {
+		return fmt.Sprintf("http://%s.%s", subdomain, f.theString), nil
+	}
+	return fmt.Sprintf("http://%s", f.theString), nil
 }
 
 // Format the provided string as a SSN.
@@ -203,16 +201,14 @@ func ToPirateSpeak(theString string) (string, error) {
 	response, err := http.Get(fmt.Sprintf(pirateLink, f.theString))
 	if err != nil {
 		return "", errors.New("ERROR: Unable to convert.")
-	} else {
-		defer response.Body.Close()
-
-		contents, err := ioutil.ReadAll(response.Body)
-		if err != nil {
-			return "", err
-		}
-		return string(contents), nil
 	}
-	return "", nil
+	defer response.Body.Close()
+
+	contents, err := ioutil.ReadAll(response.Body)
+	if err != nil {
+		return "", err
+	}
+	return string(contents), nil
 }
 
 // Format the provided string in IRSA.
