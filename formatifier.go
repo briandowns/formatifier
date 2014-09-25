@@ -204,7 +204,7 @@ func ToPirateSpeak(theString string) (string, error) {
 
 	response, err := http.Get(fmt.Sprintf(pirateLink, f.theString))
 	if err != nil {
-		return "", errors.New("ERROR: Unable to convert.")
+		return "", errors.New("ERROR: Unable to convert")
 	}
 	defer response.Body.Close()
 
