@@ -19,7 +19,7 @@ This library is a Work In Progress.
 ## Installation
 
 ```bash
-go get github.com/bdowns328/formatifier
+go get github.com/briandowns/formatifier
 ```
 
 ## Examples
@@ -30,7 +30,7 @@ go get github.com/bdowns328/formatifier
 package main
 
 import (
-    "github.com/bdowns328/formatifier"
+    "github.com/briandowns/formatifier"
 )
 ```
 
@@ -65,7 +65,7 @@ fmt.Println(result)
 ### URL 1
 
 ```Go
-result, err := str.ToURL("github.com/bdowns328", true, "")
+result, err := str.ToURL("github.com/briandowns", true, "")
 if err != nil {
     fmt.Println(err)
 }
@@ -73,13 +73,13 @@ if err != nil {
 fmt.Println(result)
 ```
 ```bash
-https://github.com/bdowns328
+https://github.com/briandowns
 ```
 
 ### URL 2
 
 ```Go
-result, err := str.ToURL("github.com/bdowns328", false, "gist")
+result, err := str.ToURL("github.com/briandowns", false, "gist")
 if err != nil {
     fmt.Println(err)
 }
@@ -87,7 +87,7 @@ if err != nil {
 fmt.Println(result)
 ```
 ```bash
-http://gist.github.com/bdowns328
+http://gist.github.com/briandowns
 ```
 
 ### SSN
