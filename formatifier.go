@@ -27,8 +27,11 @@ import (
 // ToPhone will format the provided string as a Phone Number.  Only supports
 // US numbers currently.
 func ToPhone(theString string, delimiter string) (string, error) {
-	f := New(theString)
+	if len(theString) < 10 {
+		return "", errors.New(lengthError)
+	}
 
+	f := New(theString)
 	f.removeNonDigits()
 
 	var buffer bytes.Buffer
