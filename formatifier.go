@@ -18,10 +18,8 @@ import (
 	"errors"
 	"fmt"
 	"io/ioutil"
-	"math/rand"
 	"net/http"
 	"strings"
-	"time"
 )
 
 // ToPhone will format the provided string as a Phone Number.  Only supports
