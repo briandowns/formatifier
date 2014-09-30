@@ -94,12 +94,13 @@ func ToURL(theString string, secure bool, subdomain string) (string, error) {
 
 // ToSSN will format the provided string as a SSN.
 func ToSSN(theString string, delimiter string) (string, error) {
-	if len(theString) != 9 {
-		return "", errors.New(lengthError)
-	}
-
 	f := New(theString)
+
 	f.removeNonDigits()
+
+	if len(f.theString) != 9 {
+		return "", errors.New("ERROR: String needs to be 9 digits for Social Security Numbers")
+	}
 
 	var buffer bytes.Buffer
 	count := 0
@@ -122,7 +123,7 @@ func ToLockCombo(theString string, delimiter string) (string, error) {
 
 	f.removeNonDigits()
 
-	if len(f.theString) != 9 {
+	if len(f.theString) != 6 {
 		return "", errors.New("ERROR: String needs to be 6 digits for Lock Combo format")
 	}
 
