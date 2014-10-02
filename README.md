@@ -1,6 +1,6 @@
 # formatifier
 
-[![GoDoc](https://godoc.org/github.com/briandowns/formatifier?status.svg)](https://godoc.org/github.com/briandowns/formatifier)
+[![GoDoc](https://godoc.org/github.com/briandowns/formatifier?status.svg)](https://godoc.org/github.com/briandowns/formatifier) [![Build Status](https://travis-ci.org/briandowns/formatifier.svg?branch=master)](https://travis-ci.org/briandowns/formatifier)
 
 formatifier is a Go (golang) library to quickly format strings in common formats.
 
