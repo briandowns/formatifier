@@ -1,12 +1,10 @@
 # formatifier
 
+[![GoDoc](https://godoc.org/github.com/briandowns/formatifier?status.svg)](https://godoc.org/github.com/briandowns/formatifier)
+
 formatifier is a Go (golang) library to quickly format strings in common formats.
 
 This is a port of [Jim Sidler's](https://github.com/jvsidler) [formatifier](https://github.com/jvsidler/formatifier) 
-
-[![GoDoc](https://godoc.org/github.com/briandowns/formatifier?status.svg)](https://godoc.org/github.com/briandowns/formatifier)
-
-or
 
 ```bash
 godoc -http=:6060
