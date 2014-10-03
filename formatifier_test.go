@@ -68,7 +68,14 @@ func TestToPirateSpeak(t *testing.T) {
 }
 
 func TestToIRSA(t *testing.T) {
-	//
+	result, err := ToIRSA("hello my friend")
+	if err != nil {
+		t.Error(err)
+	}
+
+	if !strings.Contains(result, "hotel echo lima lima oscar  |  mike yankee  |  foxtrot romeo india echo november delta ") {
+		t.Error("Didn't find the expected converted string")
+	}
 }
 
 func TestToLeet(t *testing.T) {
