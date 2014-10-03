@@ -6,7 +6,28 @@ import (
 )
 
 func TestToPhone(t *testing.T) {
-	//
+	result1, err1 := ToPhone("2155551212", "-")
+	if err1 != nil {
+		t.Error(err1)
+	}
+
+	if len(result1) != 14 {
+		t.Error("Incorrect length of formatted string")
+	} else if !strings.ContainsAny(result1, "( | )") {
+		t.Error("Didn't find expected characters")
+	}
+
+	result2, err2 := ToPhone("12155551212", "-")
+	if err2 != nil {
+		t.Error(err2)
+	}
+
+	if len(result2) != 16 {
+		t.Error("Incorrect length of formatted string")
+	} else if !strings.ContainsAny(result2, "( | )") {
+		t.Error("Didn't find expected characters")
+	}
+
 }
 
 func TestToURL(t *testing.T) {
