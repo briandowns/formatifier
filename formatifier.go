@@ -238,7 +238,7 @@ func ToIRSA(theString string) (string, error) {
 }
 
 // ToLeet will format the provided string in Leet Speak.
-// TODO(bdowns328) Make select post match random.
+// TODO(briandowns) Make select post match random.
 func ToLeet(theString string) (string, error) {
 	f := New(theString)
 
