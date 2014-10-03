@@ -56,7 +56,14 @@ func TestToLockCombo(t *testing.T) {
 }
 
 func TestToISBN(t *testing.T) {
-	//
+	result, err := ToISBN("6517106483096", "-")
+	if err != nil {
+		t.Error(err)
+	}
+
+	if !strings.Contains(result, "651-7-10-648309-6") {
+		t.Error("Didn't find the expected converted string")
+	}
 }
 
 func TestToMorseCode(t *testing.T) {
