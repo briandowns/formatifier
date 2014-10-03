@@ -63,6 +63,21 @@ func TestToMorseCode(t *testing.T) {
 	//
 }
 
-func TestToPirateSpeak(t testing.T) {
+func TestToPirateSpeak(t *testing.T) {
 	//
+}
+
+func TestToIRSA(t *testing.T) {
+	//
+}
+
+func TestToLeet(t *testing.T) {
+	result, err := ToLeet("that is cool dude")
+	if err != nil {
+		t.Error(err)
+	}
+
+	if !strings.Contains(result, "7#47 15 kewl d00d") {
+		t.Error("Didn't find the expected converted string")
+	}
 }
