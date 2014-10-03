@@ -35,7 +35,7 @@ import (
 ### Telephone 1
 
 ```Go
-result, err := str.ToPhone("2155551212", "-")
+result, err := ToPhone("2155551212", "-")
 if err != nil {
     fmt.Println(err)
 }
@@ -49,7 +49,7 @@ fmt.Println(result)
 ### Telephone 2
 
 ```Go
-result, err := str.ToPhone("12155551212", "-")
+result, err := ToPhone("12155551212", "-")
 if err != nil {
     fmt.Println(err)
 }
@@ -63,7 +63,7 @@ fmt.Println(result)
 ### URL 1
 
 ```Go
-result, err := str.ToURL("github.com/briandowns", true, "")
+result, err := ToURL("github.com/briandowns", true, "")
 if err != nil {
     fmt.Println(err)
 }
@@ -77,7 +77,7 @@ https://github.com/briandowns
 ### URL 2
 
 ```Go
-result, err := str.ToURL("github.com/briandowns", false, "gist")
+result, err := ToURL("github.com/briandowns", false, "gist")
 if err != nil {
     fmt.Println(err)
 }
@@ -91,7 +91,7 @@ http://gist.github.com/briandowns
 ### SSN
 
 ```Go
-result, err := str.ToSSN("786540986", "-")
+result, err := ToSSN("786540986", "-")
 if err != nil {
     fmt.Println(err)
 }
@@ -105,7 +105,7 @@ fmt.Println(result)
 ### Lock Combo
 
 ```Go
-result, err := str.ToLoclCombo("651096", "-")
+result, err := ToLoclCombo("651096", "-")
 if err != nil {
     fmt.Println(err)
 }
@@ -119,7 +119,7 @@ fmt.Println(result)
 ### ISBN
 
 ```Go
-result, err := str.ToISBN("6517106483096", "-")
+result, err := ToISBN("6517106483096", "-")
 if err != nil {
     fmt.Println(err)
 }
@@ -132,7 +132,7 @@ fmt.Println(result)
 ### Morse Code
 
 ```Go
-result, err := str.ToMorseCode("hello my friend")
+result, err := ToMorseCode("hello my friend")
 if err != nil {
     fmt.Println(err)
 }
@@ -146,7 +146,7 @@ fmt.Println(result)
 ### Pirate Speak
 
 ```Go
-result, err := str.ToPirateSpeak("hello my friend")
+result, err := ToPirateSpeak("hello my friend")
 if err != nil {
     fmt.Println(err)
 }
@@ -160,7 +160,7 @@ ahoy my mate
 ### IRSA
 
 ```Go
-result, err := str.ToIRSA("hello my friend")
+result, err := ToIRSA("hello my friend")
 if err != nil {
     fmt.Println(err)
 }
@@ -174,7 +174,7 @@ hotel echo lima lima oscar  |  mike yankee  |  foxtrot romeo india echo november
 ### Leet Speak
 
 ```Go
-result, err := str.ToLeet("that is cool dude")
+result, err := ToLeet("that is cool dude")
 if err != nil {
     fmt.Println(err)
 }
