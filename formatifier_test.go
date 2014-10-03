@@ -5,6 +5,10 @@ import (
 	"strings"
 )
 
+func TestToPhone(t *testing.T) {
+	//
+}
+
 func TestToURL(t *testing.T) {
 	result1, err1 := ToURL("github.com", false, "www")
 	if err1 != nil {
@@ -51,3 +55,14 @@ func TestToLockCombo(t *testing.T) {
 	}
 }
 
+func TestToISBN(t *testing.T) {
+	//
+}
+
+func TestToMorseCode(t *testing.T) {
+	//
+}
+
+func TestToPirateSpeak(t testing.T) {
+	//
+}
