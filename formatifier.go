@@ -15,12 +15,12 @@
 package formatifier
 
 import (
+	"bytes"
 	"errors"
 	"fmt"
 	"io/ioutil"
 	"net/http"
 	"strings"
-	"bytes"
 )
 
 // ToPhone will format the provided string as a Phone Number.  Only supports

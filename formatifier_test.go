@@ -1,8 +1,8 @@
 package formatifier
 
 import (
-	"testing"
 	"strings"
+	"testing"
 )
 
 func TestToPhone(t *testing.T) {
