@@ -60,11 +60,25 @@ func TestToISBN(t *testing.T) {
 }
 
 func TestToMorseCode(t *testing.T) {
-	//
+	result, err := ToMorseCode("hello my friend")
+	if err != nil {
+		t.Error(err)
+	}
+
+	if !strings.Contains(result, ". . . ... _ . .. _ . ._ _ _ _ __ . _ _ . . _ .. _ .. .._ ._ . .") {
+		t.Error("Didn't find the expected converted string")
+	}
 }
 
 func TestToPirateSpeak(t *testing.T) {
-	//
+	result, err := ToPirateSpeak("hello my friend")
+	if err != nil {
+		t.Error(err)
+	}
+
+	if !strings.ContainsAny(result, "ahoy | mate") {
+		t.Error("Didn't find the expected converted string")
+	}
 }
 
 func TestToIRSA(t *testing.T) {
