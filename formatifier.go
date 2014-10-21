@@ -77,7 +77,6 @@ func ToURL(theString string, secure bool, subdomain string) (string, error) {
 	}
 
 	f := New(theString)
-
 	f.makeLower()
 
 	if secure {
@@ -96,7 +95,6 @@ func ToURL(theString string, secure bool, subdomain string) (string, error) {
 // ToSSN will format the provided string as a SSN.
 func ToSSN(theString string, delimiter string) (string, error) {
 	f := New(theString)
-
 	f.removeNonDigits()
 
 	if len(f.theString) != 9 {
@@ -121,7 +119,6 @@ func ToSSN(theString string, delimiter string) (string, error) {
 // ToLockCombo will format the provided string as a Lock Combo.
 func ToLockCombo(theString string, delimiter string) (string, error) {
 	f := New(theString)
-
 	f.removeNonDigits()
 
 	if len(f.theString) != 6 {
@@ -147,7 +144,6 @@ func ToLockCombo(theString string, delimiter string) (string, error) {
 // (ISBN) format.
 func ToISBN(theString string, delimiter string) (string, error) {
 	f := New(theString)
-
 	f.removeNonDigits()
 
 	if len(f.theString) != 13 {
