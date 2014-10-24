@@ -36,26 +36,31 @@ func ToPhone(theString, delimiter string) (string, error) {
 	var buffer bytes.Buffer
 	count := 0
 	switch len(f.theString) {
-		case 10:
-			buffer.WriteString("(")
-			for _, i := range f.theString {
-				count++
-				buffer.WriteString(string(i))
-				switch count {
-					case 3: buffer.WriteString(") ")
-					case 6: buffer.WriteString(fmt.Sprintf("%s", delimiter))
-				}
+	case 10:
+		buffer.WriteString("(")
+		for _, i := range f.theString {
+			count++
+			buffer.WriteString(string(i))
+			switch count {
+			case 3:
+				buffer.WriteString(") ")
+			case 6:
+				buffer.WriteString(fmt.Sprintf("%s", delimiter))
 			}
-	    case 11:
-			for _, i := range f.theString {
-				count++
-				buffer.WriteString(string(i))
-				switch count {
-					case 1: buffer.WriteString(" (")
-					case 4: buffer.WriteString(") ")
-					case 7: buffer.WriteString(fmt.Sprintf("%s", delimiter))
-				}
+		}
+	case 11:
+		for _, i := range f.theString {
+			count++
+			buffer.WriteString(string(i))
+			switch count {
+			case 1:
+				buffer.WriteString(" (")
+			case 4:
+				buffer.WriteString(") ")
+			case 7:
+				buffer.WriteString(fmt.Sprintf("%s", delimiter))
 			}
+		}
 	}
 	return buffer.String(), nil
 }
