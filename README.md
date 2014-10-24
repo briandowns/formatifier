@@ -4,7 +4,7 @@
 
 formatifier is a Go (golang) library to quickly format strings in common formats.
 
-This is a port of [Jim Sidler's](https://github.com/jvsidler) [formatifier](https://github.com/jvsidler/formatifier) 
+This is a port of [Jim Sidler's](https://github.com/jvsidler) [formatifier](https://github.com/jvsidler/formatifier)
 
 ```bash
 godoc -http=:6060
@@ -168,7 +168,7 @@ if err != nil {
 fmt.Println(result)
 ```
 ```bash
-hotel echo lima lima oscar  |  mike yankee  |  foxtrot romeo india echo november delta 
+hotel echo lima lima oscar  |  mike yankee  |  foxtrot romeo india echo november delta
 ```
 
 ### Leet Speak
