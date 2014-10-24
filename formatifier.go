@@ -25,7 +25,7 @@ import (
 
 // ToPhone will format the provided string as a Phone Number.  Only supports
 // US numbers currently.
-func ToPhone(theString string, delimiter string) (string, error) {
+func ToPhone(theString, delimiter string) (string, error) {
 	if len(theString) < 10 {
 		return "", errors.New(lengthError)
 	}
@@ -93,7 +93,7 @@ func ToURL(theString string, secure bool, subdomain string) (string, error) {
 }
 
 // ToSSN will format the provided string as a SSN.
-func ToSSN(theString string, delimiter string) (string, error) {
+func ToSSN(theString, delimiter string) (string, error) {
 	f := New(theString)
 	f.removeNonDigits()
 
@@ -117,7 +117,7 @@ func ToSSN(theString string, delimiter string) (string, error) {
 }
 
 // ToLockCombo will format the provided string as a Lock Combo.
-func ToLockCombo(theString string, delimiter string) (string, error) {
+func ToLockCombo(theString, delimiter string) (string, error) {
 	f := New(theString)
 	f.removeNonDigits()
 
@@ -142,7 +142,7 @@ func ToLockCombo(theString string, delimiter string) (string, error) {
 
 // ToISBN will format the provided string in International Standard Book Number
 // (ISBN) format.
-func ToISBN(theString string, delimiter string) (string, error) {
+func ToISBN(theString, delimiter string) (string, error) {
 	f := New(theString)
 	f.removeNonDigits()
 
