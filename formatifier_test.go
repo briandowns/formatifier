@@ -31,7 +31,7 @@ func TestToPhone(t *testing.T) {
 }
 
 func TestToURL(t *testing.T) {
-	result1, err1 := ToURL("github.com", false, "www")
+	result1, err1 := ToURL("github.com", "www", false)
 	if err1 != nil {
 		t.Error(err1)
 	}
@@ -40,7 +40,7 @@ func TestToURL(t *testing.T) {
 		t.Error("Didn't find expected protocol")
 	}
 
-	result2, err2 := ToURL("github.com", true, "www")
+	result2, err2 := ToURL("github.com", "www", true)
 	if err2 != nil {
 		t.Error(err2)
 	}
