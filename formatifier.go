@@ -35,34 +35,27 @@ func ToPhone(theString, delimiter string) (string, error) {
 
 	var buffer bytes.Buffer
 	count := 0
-
-	if len(f.theString) == 10 {
-		buffer.WriteString("(")
-		for _, i := range f.theString {
-			count++
-
-			buffer.WriteString(string(i))
-
-			if count == 3 {
-				buffer.WriteString(") ")
-			} else if count == 6 {
-				buffer.WriteString(fmt.Sprintf("%s", delimiter))
+	switch len(f.theString) {
+		case 10:
+			buffer.WriteString("(")
+			for _, i := range f.theString {
+				count++
+				buffer.WriteString(string(i))
+				switch count {
+					case 3: buffer.WriteString(") ")
+					case 6: buffer.WriteString(fmt.Sprintf("%s", delimiter))
+				}
 			}
-		}
-	} else if len(f.theString) == 11 {
-		for _, i := range f.theString {
-			count++
-
-			buffer.WriteString(string(i))
-
-			if count == 1 {
-				buffer.WriteString(" (")
-			} else if count == 4 {
-				buffer.WriteString(") ")
-			} else if count == 7 {
-				buffer.WriteString(fmt.Sprintf("%s", delimiter))
+	    case 11:
+			for _, i := range f.theString {
+				count++
+				buffer.WriteString(string(i))
+				switch count {
+					case 1: buffer.WriteString(" (")
+					case 4: buffer.WriteString(") ")
+					case 7: buffer.WriteString(fmt.Sprintf("%s", delimiter))
+				}
 			}
-		}
 	}
 	return buffer.String(), nil
 }
