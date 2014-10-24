@@ -63,7 +63,7 @@ fmt.Println(result)
 ### URL 1
 
 ```Go
-result, err := ToURL("github.com/briandowns", true, "")
+result, err := ToURL("github.com/briandowns", "", true)
 if err != nil {
     fmt.Println(err)
 }
@@ -77,7 +77,7 @@ https://github.com/briandowns
 ### URL 2
 
 ```Go
-result, err := ToURL("github.com/briandowns", false, "gist")
+result, err := ToURL("github.com/briandowns", "gist", false)
 if err != nil {
     fmt.Println(err)
 }

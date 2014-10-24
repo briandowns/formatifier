@@ -69,7 +69,7 @@ func ToPhone(theString, delimiter string) (string, error) {
 
 // ToURL will format the provided string as a URL.  HTTP and HTTPS
 // are the only supported protocols at this time.
-func ToURL(theString string, secure bool, subdomain string) (string, error) {
+func ToURL(theString, subdomain string, secure bool) (string, error) {
 	// I'm assuming we have at least a 1 character domain, a dot, and a two
 	// char TLD.
 	if len(theString) < 4 {
