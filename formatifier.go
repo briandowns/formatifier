@@ -61,6 +61,8 @@ func ToPhone(theString, delimiter string) (string, error) {
 				buffer.WriteString(fmt.Sprintf("%s", delimiter))
 			}
 		}
+	default:
+		return "", errors.New("ERROR: Non US number given")
 	}
 	return buffer.String(), nil
 }
