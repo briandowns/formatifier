@@ -6,9 +6,9 @@ import (
 )
 
 var (
-	testString  string = "aBcDeFgHiJkLmNoPqRsTuVwXyZ"
-	testString2 string = "aBcD8FgHiJ9LmNoPqR7TuVwXyZ"
-	testString3 string = "aBcD8FgHiJ9Lm*oPqR|TuVwXyZ"
+	testString  = "aBcDeFgHiJkLmNoPqRsTuVwXyZ"
+	testString2 = "aBcD8FgHiJ9LmNoPqR7TuVwXyZ"
+	testString3 = "aBcD8FgHiJ9Lm*oPqR|TuVwXyZ"
 )
 
 func TestNew(t *testing.T) {

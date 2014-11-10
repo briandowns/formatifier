@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// formatifier is a library to easily format strings in a user defined
+// Package formatifier is a library to easily format strings in a user defined
 // and predefined manner.
 package formatifier
 
