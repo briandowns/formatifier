@@ -23,6 +23,7 @@ import (
 )
 
 const (
+	//lengthError = "ERROR: String not long enough to convert."
 	lengthError = "ERROR: String not long enough to convert."
 	pirateLink  = "http://www.isithackday.com/arrpi.php?text=%s"
 )
@@ -32,7 +33,7 @@ type formatifier struct {
 	theString string
 }
 
-// New will create a new instance of the String object.
+// New will create an instance of the String object.
 func New(s string) *formatifier {
 	return &formatifier{theString: s}
 }
