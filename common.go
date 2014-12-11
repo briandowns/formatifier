@@ -34,14 +34,10 @@ type formatifier struct {
 }
 
 // New will create an instance of the String object.
-func New(s string) *formatifier {
-	return &formatifier{theString: s}
-}
+func New(s string) *formatifier { return &formatifier{theString: s} }
 
 // Makes the user entered string lower case.
-func (f *formatifier) makeLower() {
-	f.theString = strings.ToLower(f.theString)
-}
+func (f *formatifier) makeLower() { f.theString = strings.ToLower(f.theString) }
 
 // Remove any non digit characters from the string.
 func (f *formatifier) removeNonDigits() {
