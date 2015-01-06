@@ -30,10 +30,11 @@ const (
 // Type to hold user input string.
 type formatifier struct {
 	theString string
+	length    int
 }
 
 // New will create an instance of the String object.
-func New(s string) *formatifier { return &formatifier{theString: s} }
+func New(s string) *formatifier { return &formatifier{theString: s, length: len(s)} }
 
 // makeLower will turn the user entered string to lower case
 func (f *formatifier) makeLower() { f.theString = strings.ToLower(f.theString) }
