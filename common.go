@@ -59,14 +59,14 @@ func (f *formatifier) urlEncodeSpaces() {
 }
 
 // random select will return a random selection from an int slice
-func randomSelect(anySlice []int) int {
+func randomSelect(a []int) int {
 	var tmpIndex int
-	length := len(anySlice)
+	length := len(a)
 	randBytes := make([]byte, length)
 	if _, err := rand.Read(randBytes); err == nil {
 		tmpIndex = int(randBytes[0]) % length
 	}
-	return anySlice[tmpIndex]
+	return a[tmpIndex]
 }
 
 // leet speak map of string slices
