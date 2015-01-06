@@ -14,7 +14,7 @@ var (
 func TestNew(t *testing.T) {
 	t.Parallel()
 	n := New(testString)
-	if len(n.theString) != 26 {
+	if n.length != len(n.theString) || n.length != 26 {
 		t.Error("Unusable instance of New()")
 	}
 }
