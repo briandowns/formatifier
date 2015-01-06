@@ -26,16 +26,16 @@ import (
 // ToPhone will format the provided string as a Phone Number.  Only supports
 // US numbers currently.
 func ToPhone(theString, delimiter string) (string, error) {
-	if len(theString) < 10 {
-		return "", errors.New(lengthError)
-	}
-
 	f := New(theString)
 	f.removeNonDigits()
 
+	if f.length < 10 {
+		return "", errors.New(lengthError)
+	}
+
 	var buffer bytes.Buffer
 	count := 0
-	switch len(f.theString) {
+	switch f.length {
 	case 10:
 		buffer.WriteString("(")
 		for _, i := range f.theString {
@@ -70,13 +70,12 @@ func ToPhone(theString, delimiter string) (string, error) {
 // ToURL will format the provided string as a URL.  HTTP and HTTPS
 // are the only supported protocols at this time.
 func ToURL(theString, subdomain string, secure bool) (string, error) {
-	// I'm assuming we have at least a 1 character domain, a dot, and a two
-	// char TLD.
-	if len(theString) < 4 {
+	f := New(theString)
+
+	if f.length < 4 {
 		return "", errors.New(lengthError)
 	}
 
-	f := New(theString)
 	f.makeLower()
 
 	if secure {
@@ -97,7 +96,7 @@ func ToSSN(theString, delimiter string) (string, error) {
 	f := New(theString)
 	f.removeNonDigits()
 
-	if len(f.theString) != 9 {
+	if f.length != 9 {
 		return "", errors.New("ERROR: String needs to be 9 digits for Social Security Numbers")
 	}
 
@@ -121,7 +120,7 @@ func ToLockCombo(theString, delimiter string) (string, error) {
 	f := New(theString)
 	f.removeNonDigits()
 
-	if len(f.theString) != 6 {
+	if f.length != 6 {
 		return "", errors.New("ERROR: String needs to be 6 digits for Lock Combo format")
 	}
 
@@ -146,7 +145,7 @@ func ToISBN(theString, delimiter string) (string, error) {
 	f := New(theString)
 	f.removeNonDigits()
 
-	if len(f.theString) != 13 {
+	if f.length != 13 {
 		return "", errors.New("ERROR: string must be 13 characters")
 	}
 
@@ -169,7 +168,7 @@ func ToISBN(theString, delimiter string) (string, error) {
 func ToMorseCode(theString string) (string, error) {
 	f := New(theString)
 
-	if len(f.theString) < 1 {
+	if f.length < 1 {
 		return "", errors.New(lengthError)
 	}
 
@@ -192,7 +191,7 @@ func ToMorseCode(theString string) (string, error) {
 func ToPirateSpeak(theString string) (string, error) {
 	f := New(theString)
 
-	if len(f.theString) < 1 {
+	if f.length < 1 {
 		return "", errors.New(lengthError)
 	}
 
@@ -216,7 +215,7 @@ func ToPirateSpeak(theString string) (string, error) {
 func ToIRSA(theString string) (string, error) {
 	f := New(theString)
 
-	if len(f.theString) < 1 {
+	if f.length < 1 {
 		return "", errors.New(lengthError)
 	}
 
@@ -238,7 +237,7 @@ func ToIRSA(theString string) (string, error) {
 func ToLeet(theString string) (string, error) {
 	f := New(theString)
 
-	if len(f.theString) < 1 {
+	if f.length < 1 {
 		return "", errors.New(lengthError)
 	}
 
