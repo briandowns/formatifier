@@ -12,6 +12,7 @@ var (
 )
 
 func TestNew(t *testing.T) {
+	t.Parallel()
 	n := New(testString)
 	if len(n.theString) != 26 {
 		t.Error("Unusable instance of New()")
@@ -19,6 +20,7 @@ func TestNew(t *testing.T) {
 }
 
 func TestmakeLower(t *testing.T) {
+	t.Parallel()
 	n := New(testString)
 	n.makeLower()
 	if strings.ToLower(n.theString) != n.theString {
@@ -27,6 +29,7 @@ func TestmakeLower(t *testing.T) {
 }
 
 func TestremoveNonDigits(t *testing.T) {
+	t.Parallel()
 	n := New(testString2)
 	n.removeNonWordChars()
 	if n.theString != "897" {
@@ -35,6 +38,7 @@ func TestremoveNonDigits(t *testing.T) {
 }
 
 func TestremoveNonWordChars(t *testing.T) {
+	t.Parallel()
 	n := New(testString3)
 	n.removeNonWordChars()
 	if n.theString != "acDFgHiJLmoPqRTuVwXyZ" {
@@ -43,9 +47,9 @@ func TestremoveNonWordChars(t *testing.T) {
 }
 
 func TesturlEncodeSpaces(t *testing.T) {
-
+	t.Parallel()
 }
 
 func TestrandomSelect(t *testing.T) {
-
+	t.Parallel()
 }

@@ -23,7 +23,6 @@ import (
 )
 
 const (
-	//lengthError = "ERROR: String not long enough to convert."
 	lengthError = "ERROR: String not long enough to convert."
 	pirateLink  = "http://www.isithackday.com/arrpi.php?text=%s"
 )
@@ -36,16 +35,16 @@ type formatifier struct {
 // New will create an instance of the String object.
 func New(s string) *formatifier { return &formatifier{theString: s} }
 
-// Makes the user entered string lower case.
+// makeLower will turn the user entered string to lower case
 func (f *formatifier) makeLower() { f.theString = strings.ToLower(f.theString) }
 
-// Remove any non digit characters from the string.
+// removeNonDigits removes any non digit characters from the string.
 func (f *formatifier) removeNonDigits() {
 	rp := regexp.MustCompile(`\D`)
 	f.theString = rp.ReplaceAllString(f.theString, "")
 }
 
-// Remove all non word characters.
+// removeNonWordChars removes all non word characters.
 func (f *formatifier) removeNonWordChars() {
 	if len(f.theString) > 0 {
 		rp := regexp.MustCompile(`\W|\s|_`)
@@ -53,11 +52,13 @@ func (f *formatifier) removeNonWordChars() {
 	}
 }
 
+// urlEncodeSpaces will replace spaces with "%20"'s
 func (f *formatifier) urlEncodeSpaces() {
 	rp := regexp.MustCompile(`\s`)
 	f.theString = rp.ReplaceAllString(f.theString, "%20")
 }
 
+// random select will return a random selection from an int slice
 func randomSelect(anySlice []int) int {
 	var tmpIndex int
 	length := len(anySlice)
@@ -68,7 +69,7 @@ func randomSelect(anySlice []int) int {
 	return anySlice[tmpIndex]
 }
 
-// Leet speak map of string slices
+// leet speak map of string slices
 var leet = map[string][]string{
 	"leet":     []string{"1337"},
 	"the":      []string{"teh"},
@@ -112,6 +113,7 @@ var leet = map[string][]string{
 	"z":        []string{"2", "7_"},
 }
 
+// irsa conversion map
 var irsa = map[string]string{
 	" ": " | ",
 	"a": "alfa",
@@ -142,6 +144,7 @@ var irsa = map[string]string{
 	"z": "zulu",
 }
 
+// morese holds conversion chars for Morse Code
 var morse = map[string]string{
 	"a":  ". _",
 	"b":  "_ . . .",
