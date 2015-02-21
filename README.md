@@ -6,14 +6,6 @@ formatifier is a Go (golang) library to quickly format strings in common formats
 
 This is a port of [Jim Sidler's](https://github.com/jvsidler) [formatifier](https://github.com/jvsidler/formatifier)
 
-```bash
-godoc -http=:6060
-```
-
-## Warning
-
-This library is a Work In Progress.
-
 ## Installation
 
 ```bash
@@ -25,11 +17,7 @@ go get github.com/briandowns/formatifier
 ### Import the package
 
 ```Go
-package main
-
-import (
-    "github.com/briandowns/formatifier"
-)
+import "github.com/briandowns/formatifier"
 ```
 
 ### Telephone 1
