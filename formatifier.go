@@ -1,4 +1,4 @@
-// Copyright 2014 Brian J. Downs
+// Copyright 2015 Brian J. Downs
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -62,7 +62,7 @@ func ToPhone(theString, delimiter string) (string, error) {
 			}
 		}
 	default:
-		return "", errors.New("ERROR: Non US number given")
+		return "", errors.New("non US number given")
 	}
 	return buffer.String(), nil
 }
@@ -97,7 +97,7 @@ func ToSSN(theString, delimiter string) (string, error) {
 	f.removeNonDigits()
 
 	if f.length != 9 {
-		return "", errors.New("ERROR: String needs to be 9 digits for Social Security Numbers")
+		return "", errors.New("string needs to be 9 digits for Social Security Numbers")
 	}
 
 	var buffer bytes.Buffer
@@ -121,7 +121,7 @@ func ToLockCombo(theString, delimiter string) (string, error) {
 	f.removeNonDigits()
 
 	if f.length != 6 {
-		return "", errors.New("ERROR: String needs to be 6 digits for Lock Combo format")
+		return "", errors.New("string needs to be 6 digits for Lock Combo format")
 	}
 
 	var buffer bytes.Buffer
@@ -146,7 +146,7 @@ func ToISBN(theString, delimiter string) (string, error) {
 	f.removeNonDigits()
 
 	if f.length != 13 {
-		return "", errors.New("ERROR: string must be 13 characters")
+		return "", errors.New("string must be 13 characters")
 	}
 
 	var buffer bytes.Buffer
@@ -199,7 +199,7 @@ func ToPirateSpeak(theString string) (string, error) {
 
 	response, err := http.Get(fmt.Sprintf(pirateLink, f.theString))
 	if err != nil {
-		return "", errors.New("ERROR: Unable to convert")
+		return "", errors.New("unable to convert")
 	}
 	defer response.Body.Close()
 
