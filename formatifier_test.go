@@ -1,3 +1,7 @@
+//
+// formatifier package tests
+//
+
 package formatifier
 
 import (
